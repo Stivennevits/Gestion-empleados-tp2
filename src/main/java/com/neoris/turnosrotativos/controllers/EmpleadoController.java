@@ -144,3 +144,9 @@ public void delete(@PathVariable("empleadoId") Long empleadoId ){
 	repo.deleteById(empleadoId);;
 }
 */
+/*
+@DeleteMapping("/empleado/{empleadoId}")
+public void delete(@PathVariable("empleadoId") Long empleadoId ){
+	repo.deleteById(empleadoId);;
+}
+*/
