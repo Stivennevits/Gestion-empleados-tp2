@@ -32,11 +32,11 @@ public class Empleados {
 	private Integer nro_documento;
 	
 	@Column(name = "nombre", nullable = false)
-	@Pattern(regexp = "^[a-zA-Z]+$")
+	@Pattern(regexp = "^[a-zA-Z ]*$")
 	private String nombre;
 	
 	@Column(name = "apellido", nullable = false)
-	@Pattern(regexp = "^[a-zA-Z]+$")
+	@Pattern(regexp = "^[a-zA-Z ]*$")
 	private String apellido;
 	
 	@Column(name = "email", unique = true, nullable = false)
@@ -44,14 +44,14 @@ public class Empleados {
 	private String email;
 	
 	@Past
-	@Column(name = "fecha_nacimiento", nullable = false)
+	@Column(name = "fecha_nacimiento",columnDefinition = "DATETIME", nullable = false)
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date fecha_nacimiento;
 	
-	@Column(name = "fecha_ingreso", nullable = false)
+	@Column(name = "fecha_ingreso",columnDefinition = "DATETIME", nullable = false)
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date fecha_ingreso;
 	
 	@Column(name = "fecha_creacion",  columnDefinition = "DATETIME", nullable = false)
